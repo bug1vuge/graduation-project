@@ -1597,8 +1597,14 @@ input.error {
 }
 
 .benefits__item {
+  display: none;
+
   width: 100%;
   max-width: 185px;
+}
+
+.benefits__item.active{
+  display: block;
 }
 
 .benefits-arrows {
