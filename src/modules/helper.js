@@ -1,9 +1,46 @@
-const timerModule = (deadline) => {
+const openModal = (modalClass, overlayClass, openBtn, closeBtn) => {
 
-    const timerDays = document.querySelector('.count_1 > span');
-    const timerHours = document.querySelector('.count_2 > span');
-    const timerMinutes = document.querySelector('.count_3 > span');
-    const timerSeconds = document.querySelector('.count_4 > span');
+    const modal = document.querySelector(modalClass);
+    const overlay = document.querySelector(overlayClass);
+    const openModalBtns = document.querySelectorAll(openBtn);
+    const closeModalBtns = document.querySelectorAll(closeBtn);
+
+
+    const openModalFunc = (e) => {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            e.preventDefault();
+        }
+
+        overlay.style.display = 'block';
+        modal.style.display = 'block';
+    };
+
+    const closeModalFunc = (e) => {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            e.preventDefault();
+        }
+
+        overlay.style.display = 'none';
+        modal.style.display = 'none';
+    };
+
+
+    openModalBtns.forEach(btn => {
+        btn.addEventListener('click', openModalFunc);
+    });
+
+    closeModalBtns.forEach(btn => {
+        btn.addEventListener('click', closeModalFunc);
+    });
+
+};
+
+const timer = (deadline, obj) => {
+
+    const timerDays = document.querySelector(obj.days);
+    const timerHours = document.querySelector(obj.hrs);
+    const timerMinutes = document.querySelector(obj.mins);
+    const timerSeconds = document.querySelector(obj.secs);
 
     let isTimerUpdate;
 
@@ -53,7 +90,11 @@ const timerModule = (deadline) => {
     };
 
     isTimerUpdate = setInterval(updateTimer, 1000);
+};
 
-}
 
-export default timerModule;
+const slider = (slide, arrows) => {
+
+};
+
+export { openModal, timer, slider };

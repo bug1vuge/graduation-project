@@ -8,8 +8,6 @@ const benefitsSliderModule = () => {
 
     const changeSlidesAmount = () => {
 
-        slidesWrap.style.justifyContent = 'center';
-
         slides.forEach((slide) => {
             slide.classList.remove('active');
         });
@@ -19,7 +17,10 @@ const benefitsSliderModule = () => {
     };
 
     if (screen.width < 576) {
+
+        slidesWrap.style.justifyContent = 'center';
         changeSlidesAmount();
+
     }
 
     const showNextSlides = () => {
@@ -68,6 +69,7 @@ const benefitsSliderModule = () => {
             slides[count].classList.add('active');
             slides[count + 1].classList.add('active');
             slides[count + 2].classList.add('active');
+
         } else {
             slides[count].classList.remove('active');
 

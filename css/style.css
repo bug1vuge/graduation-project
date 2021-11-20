@@ -535,6 +535,14 @@ input.error {
 #calc {
   background-color: #466a78;
 }
+
+.services-slide{
+  display: none;
+}
+.services-slide.active{
+  display: block;
+}
+
 .service-block {
   position: relative;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
