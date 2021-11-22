@@ -5,7 +5,6 @@ const benefitsSliderModule = () => {
 
     let count = 0;
 
-
     const changeSlidesAmount = () => {
 
         slides.forEach((slide) => {
@@ -15,13 +14,6 @@ const benefitsSliderModule = () => {
         slides[0].classList.add('active');
 
     };
-
-    if (screen.width < 576) {
-
-        slidesWrap.style.justifyContent = 'center';
-        changeSlidesAmount();
-
-    }
 
     const showNextSlides = () => {
 
@@ -83,6 +75,13 @@ const benefitsSliderModule = () => {
         }
     };
 
+    if (screen.width < 576) {
+
+        slidesWrap.style.justifyContent = 'center';
+        changeSlidesAmount();
+
+    }
+
     sliderArrowsBlock.addEventListener('click', (e) => {
         if (e.target.closest('.benefits__arrow--right')) {
             showNextSlides();
@@ -93,4 +92,4 @@ const benefitsSliderModule = () => {
 
 };
 
-export default benefitsSliderModule;
+export { benefitsSliderModule };

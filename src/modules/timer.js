@@ -1,42 +1,4 @@
-const openModal = (modalClass, overlayClass, openBtn, closeBtn) => {
-
-    const modal = document.querySelector(modalClass);
-    const overlay = document.querySelector(overlayClass);
-    const openModalBtns = document.querySelectorAll(openBtn);
-    const closeModalBtns = document.querySelectorAll(closeBtn);
-
-
-    const openModalFunc = (e) => {
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            e.preventDefault();
-        }
-
-        overlay.style.display = 'block';
-        modal.style.display = 'block';
-    };
-
-    const closeModalFunc = (e) => {
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            e.preventDefault();
-        }
-
-        overlay.style.display = 'none';
-        modal.style.display = 'none';
-    };
-
-
-    openModalBtns.forEach(btn => {
-        btn.addEventListener('click', openModalFunc);
-    });
-
-    closeModalBtns.forEach(btn => {
-        btn.addEventListener('click', closeModalFunc);
-    });
-
-};
-
-const timer = (deadline, obj) => {
-
+const timerModule = (deadline, obj) => {
     const timerDays = document.querySelector(obj.days);
     const timerHours = document.querySelector(obj.hrs);
     const timerMinutes = document.querySelector(obj.mins);
@@ -92,9 +54,4 @@ const timer = (deadline, obj) => {
     isTimerUpdate = setInterval(updateTimer, 1000);
 };
 
-
-const slider = (slide, arrows) => {
-
-};
-
-export { openModal, timer, slider };
+export { timerModule };
