@@ -5,54 +5,69 @@ import { timerModule } from './modules/timer';
 import { sendFormModule } from './modules/sendForm';
 import { smoothScrollModule } from './modules/smoothScroll';
 import { calcModule } from './modules/calc';
+// import { showDocsModule } from './modules/showDocs';
 
-// modalModule(
-//     '.header-modal',
-//     '.overlay',
-//     '.button>a',
-//     '.header-modal__close'
-// );
-// modalModule(
-//     '.services-modal',
-//     '.overlay',
-//     '#call-measurer',
-//     '.services-modal__close'
-// );
+//модальное окно - заказать звонок
+modalModule({
+    modal: '.header-modal',
+    overlay: '.overlay',
+    openBtn: '.index-button > a',
+    closeBtn: '.header-modal__close',
+});
+modalModule({
+    modal: '.header-modal',
+    overlay: '.overlay',
+    openBtn: '.balcony-button > a',
+    closeBtn: '.header-modal__close',
+});
+modalModule({
+    modal: '.header-modal',
+    overlay: '.overlay',
+    openBtn: '.kuhni-button > a',
+    closeBtn: '.header-modal__close',
+});
+//модальное окно - вызвать замерщика
+modalModule({
+    modal: '.services-modal',
+    overlay: '.overlay',
+    openBtn: '#call-measurer',
+    closeBtn: '.services-modal__close',
+});
 
+//слайдер - выгоды для клиентов
+benefitsSliderModule();
 
-// timerModule(
-//     '28 november 2021',
-//     {
+//слайдер - услуги
+servicesSliderModule();
 
-//         days: '.count1-timer1-block > span',
-//         hrs: '.count2-timer1-block > span',
-//         mins: '.count3-timer1-block > span',
-//         secs: '.count4-timer1-block > span'
+//таймер
+timerModule(
+    '28 november 2021',
+    {
+        days: '.count1-timer1-block > span',
+        hrs: '.count2-timer1-block > span',
+        mins: '.count3-timer1-block > span',
+        secs: '.count4-timer1-block > span'
+    }
+);
+timerModule(
+    '28 november 2021',
+    {
+        days: '.count1-timer2-block > span',
+        hrs: '.count2-timer2-block > span',
+        mins: '.count3-timer2-block > span',
+        secs: '.count4-timer2-block > span'
+    }
+);
 
-//     }
-// );
-// timerModule(
-//     '28 november 2021',
-//     {
+//отправка формы
+sendFormModule('form1');
+sendFormModule('form2');
 
-//         days: '.count1-timer2-block > span',
-//         hrs: '.count2-timer2-block > span',
-//         mins: '.count3-timer2-block > span',
-//         secs: '.count4-timer2-block > span'
+//плавный скролл
+smoothScrollModule('.smooth-scroll', '#header', '#offer');
 
-//     }
-// );
-
-
-// benefitsSliderModule();
-// servicesSliderModule();
-
-
-// sendFormModule('form1');
-// sendFormModule('form2');
-
-
-// smoothScrollModule('.smooth-scroll', '#header', '#offer');
-
-
+//калькулятор стоимости услуг
 calcModule();
+
+// showDocsModule();

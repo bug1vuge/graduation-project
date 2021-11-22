@@ -94,8 +94,11 @@
 										class="text-normal">654-32-10</span></a></div>
 						</div>
 						<div class="col-sm-12 col-lg-6">
-							<div class="button"><a href="#callback" class="btn btn-warning btn-block fancyboxModal"><i
-										class="phone-icon"></i> Заказать звонок!</a></div>
+							<div class="button balcony-button">
+								<a href="#callback" class="btn btn-warning btn-block fancyboxModal">
+									<i class="phone-icon"></i> Заказать звонок!
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -155,7 +158,7 @@
 					<div class="form-group">
 						<label for="calc-type" class="text-warning">Балкон/Лоджия</label>
 						<select name="calc-type" class="form-control form-control-sm" id="calc-type">
-							<option>--</option>
+							<option value="">--</option>
 							<option value="1.2">Балкон</option>
 							<option value="1.3">Лоджия</option>
 						</select>
@@ -165,7 +168,7 @@
 					<div class="form-group">
 						<label for="calc-type-material" class="text-warning">Выберите тип остекления</label>
 						<select name="calc-type-material" class="form-control form-control-sm" id="calc-type-material">
-							<option>--</option>
+							<option value="">--</option>
 							<option value="1">Холодное Аллюминием</option>
 							<option value="2">Теплое ПВХ</option>
 						</select>
@@ -183,7 +186,7 @@
 				<div class="col-md-12 col-md-6">
 					<div class="form-group">
 						<label for="calc-total" class="text-warning">Итого</label>
-						<input name="calc-total" type="number" class="form-control" id="calc-total" placeholder="Итого"
+						<input name="calc-total" type="number" class="form-control" id="calc-total" placeholder="0"
 							disabled>
 					</div>
 				</div>
@@ -198,17 +201,17 @@
 			</div>
 			<div class="benefits-inner">
 				<div class="benefits-wrap">
-					<div class="benefits__item">
+					<div class="benefits__item active">
 						<p class="benefit-image">
 							<img src="images/benefits/4.png" alt="">
 						</p>
 						<p class="benefit-title">Рассрочка без банка </p>
 					</div>
-					<div class="benefits__item">
+					<div class="benefits__item active">
 						<p class="benefit-image"><img src="images/benefits/2.png" alt=""></p>
 						<p class="benefit-title">Гарантии от 3 до 10 лет</p>
 					</div>
-					<div class="benefits__item">
+					<div class="benefits__item active">
 						<p class="benefit-image"><img src="images/benefits/3.png" alt=""></p>
 						<p class="benefit-title">Индивидуальный подход</p>
 					</div>
@@ -244,7 +247,7 @@
 				<h2 class="heading white">Наши <span>услуги</span></h2>
 			</div>
 			<div class="row">
-				<div class="col-md-12 col-lg-6">
+				<div class="col-md-12 col-lg-6 services-slide active">
 					<div class="service-block">
 						<div class="service-image">
 							<img src="images/services/1.jpg" alt="">
@@ -317,12 +320,13 @@
 							<p class="services-image_mobile visible-xs-block"><a
 									href="images/services/original/hot/1.jpg" data-fancybox-group="fancybox-thumb-1"
 									class="fancybox-thumb"><span>Смотреть работы</span></a></p>
-							<div class="service-button"><a href="#application" data-subject="Тёплое остекление"
+							<div class="service-button"><a id="call-measurer" href="#application"
+									data-subject="Тёплое остекление"
 									class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a></div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-12 col-lg-6">
+				<div class="col-md-12 col-lg-6 services-slide active">
 					<div class="service-block">
 						<div class="service-image">
 							<img src="images/services/2.jpg" alt="">
@@ -389,12 +393,12 @@
 							<p class="services-image_mobile visible-xs-block"><a
 									href="images/services/original/loggia/1.jpg" data-fancybox-group="fancybox-thumb-2"
 									class="fancybox-thumb"><span>Смотреть работы</span></a></p>
-							<div class="service-button"><a href="#application" data-subject="Лоджии"
+							<div class="service-button"><a id="call-measurer" href="#application" data-subject="Лоджии"
 									class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a></div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-12 col-lg-6">
+				<div class="col-md-12 col-lg-6 services-slide">
 					<div class="service-block">
 						<div class="service-image">
 							<img src="images/services/3.jpg" alt="">
@@ -469,12 +473,13 @@
 							<p class="services-image_mobile visible-xs-block"><a
 									href="images/services/original/cold/1.jpg" data-fancybox-group="fancybox-thumb-3"
 									class="fancybox-thumb"><span>Смотреть работы</span></a></p>
-							<div class="service-button"><a href="#application" data-subject="Холодное остекление"
+							<div class="service-button"><a id="call-measurer" href="#application"
+									data-subject="Холодное остекление"
 									class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a></div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-12 col-lg-6">
+				<div class="col-md-12 col-lg-6 services-slide">
 					<div class="service-block">
 						<div class="service-image">
 							<img src="images/services/4.jpg" alt="">
@@ -588,7 +593,7 @@
 							<p class="services-image_mobile visible-xs-block"><a
 									href="images/services/original/balcony/1.jpg" data-fancybox-group="fancybox-thumb-4"
 									class="fancybox-thumb"><span>Смотреть работы</span></a></p>
-							<div class="service-button"><a href="#application" data-subject="Балконы"
+							<div class="service-button"><a id="call-measurer" href="#application" data-subject="Балконы"
 									class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a></div>
 						</div>
 					</div>
@@ -615,10 +620,10 @@
 						<div class="countdown" data-days="7">
 							<div class="countdown-text">До конца акции осталось:
 								<div class="count-wrap">
-									<div class="count count_1">Дней:</br> <span>01</span></div>
-									<div class="count count_2">Часов:</br> <span>02</span></div>
-									<div class="count count_3">Минут:</br> <span>03</span></div>
-									<div class="count count_4">Секунд:</br> <span>04</span></div>
+									<div class="count count_1 count1-timer1-block">Дней:</br> <span>00</span></div>
+									<div class="count count_2 count2-timer1-block">Часов:</br> <span>00</span></div>
+									<div class="count count_3 count3-timer1-block">Минут:</br> <span>00</span></div>
+									<div class="count count_4 count4-timer1-block">Секунд:</br> <span>00</span></div>
 								</div>
 							</div>
 						</div>
@@ -627,7 +632,7 @@
 						<div class="order-form rf">
 							<h3 class="order-form-heading">Оставить заявку</h3>
 							<div class="order-form-subheading">на получение скидки 20%</div>
-							<form name="action-form" class="form-horizontal">
+							<form id="form1" name="action-form" class="form-horizontal">
 								<div class="form-group">
 									<div class="col-sm-12">
 										<input type="text" name="fio" class="form-control required"
@@ -832,10 +837,10 @@
 						<div class="countdown" data-days="7">
 							<div class="countdown-text">До конца акции осталось:
 								<div class="count-wrap">
-									<div class="count count_1">Дней:</br> <span>01</span></div>
-									<div class="count count_2">Часов:</br> <span>02</span></div>
-									<div class="count count_3">Минут:</br> <span>03</span></div>
-									<div class="count count_4">Секунд:</br> <span>04</span></div>
+									<div class="count count_1 count1-timer2-block">Дней:</br> <span>00</span></div>
+									<div class="count count_2 count2-timer2-block">Часов:</br> <span>00</span></div>
+									<div class="count count_3 count3-timer2-block">Минут:</br> <span>00</span></div>
+									<div class="count count_4 count4-timer2-block">Секунд:</br> <span>00</span></div>
 								</div>
 							</div>
 						</div>
@@ -844,7 +849,7 @@
 						<div class="order-form rf">
 							<h3 class="order-form-heading">Оставить заявку</h3>
 							<div class="order-form-subheading">на получение скидки 20%</div>
-							<form name="action-form2" class="form-horizontal">
+							<form id="form2" name="action-form2" class="form-horizontal">
 								<div class="form-group">
 									<div class="col-sm-12">
 										<input type="text" name="fio" class="form-control required"

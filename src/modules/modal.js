@@ -1,9 +1,8 @@
-const modalModule = (modalClass, overlayClass, openBtn, closeBtn) => {
-    const modal = document.querySelector(modalClass);
-    const overlay = document.querySelector(overlayClass);
-    const openModalBtns = document.querySelectorAll(openBtn);
-    const closeModalBtns = document.querySelectorAll(closeBtn);
-
+const modalModule = (modalData) => {
+    const modal = document.querySelector(modalData.modal);
+    const overlay = document.querySelector(modalData.overlay);
+    const openModalBtns = document.querySelectorAll(modalData.openBtn);
+    const closeModalBtns = document.querySelectorAll(modalData.closeBtn);
 
     const openModalFunc = (e) => {
         if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {

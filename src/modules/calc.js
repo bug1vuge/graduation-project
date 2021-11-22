@@ -1,35 +1,42 @@
 const calcModule = (price = 100) => {
-    const calcType = document.querySelector('#calc-type');
-    const calcTypeMaterial = document.querySelector('#calc-type-material');
-    const calcTypeInput = document.querySelector('#calc-input');
-    const calcTotal = document.querySelector('#calc-total');
+    const typeSelect = document.querySelector('#calc-type');
+    const materialSelect = document.querySelector('#calc-type-material');
+    const squareInput = document.querySelector('#calc-input');
+    const totalInput = document.querySelector('#calc-total');
     const calcWrap = document.querySelector('.calc-container');
 
-    calcTotal.value = 0;
+    const countAmount = () => {
+        const typeSelectVal = +typeSelect.options[typeSelect.selectedIndex].value;
+        const squareInputVal = +squareInput.value;
 
-    const countCalc = () => {
-        const calcTypeValue = calcType.value;
-        const calcTypeInputVal = calcTypeInput.value;
-        const calcTypeMaterialVal = calcTypeMaterial.value;
+        let totalVal = 0;
+        let materialSelectVal = 1;
 
-        let totalValue = 0;
-
-        if (calcType.value && calcTypeInput.value) {
-            totalValue = Math.ceil(calcTypeValue * calcTypeInputVal * calcTypeMaterialVal * price);
-        } else {
-            totalValue = 0;
+        if (materialSelect.options[materialSelect.selectedIndex].value !== '--') {
+            materialSelectVal = +materialSelect.options[materialSelect.selectedIndex].value;
         }
 
-        calcTotal.value = totalValue;
+        if (typeSelect.value && squareInput.value) {
+            totalVal = Math.ceil(price * typeSelectVal * materialSelectVal * squareInputVal);
+        } else {
+            totalVal = 0;
+        }
+
+        totalInput.value = totalVal;
+
+
+        if (typeSelectVal === 0) {
+            materialSelect.value = '';
+            squareInput.value = '';
+        }
     };
 
     calcWrap.addEventListener('input', (e) => {
-
         if (e.target.getAttribute('id') === 'calc-input') {
             e.target.value = e.target.value.replace(/[^0-9]/g, '');
         }
 
-        countCalc();
+        countAmount();
     });
 };
 
