@@ -1,72 +1,85 @@
-const sendFormModule = (formId) => {
-    const form = document.getElementById(formId);
-    const nameInput = form.querySelector('input[name=fio]');
-    const phoneInput = form.querySelector('input[name=phone]');
+const sendFormModule = () => {
 
-    const regExpName = /^[а-яА-Яa-zA-z]{2,}/g;
-    const regExpPhone = /^[0-9]{7,16}/g;
+    const sendFormFunc = (formId) => {
+        const form = document.getElementById(formId);
+        const formInputs = form.querySelectorAll('input');
 
-    const checkingInputValue = () => {
-        if (
-            nameInput.value !== '' &&
-            phoneInput.value !== '' &&
-            regExpName.test(nameInput.value) &&
-            regExpPhone.test(phoneInput.value)
-        ) {
-            return true;
-        } else {
-            return false;
-        }
-    };
+        const totalVal = localStorage.getItem('totalValue')
 
-    const validateElem = (el) => {
-        if (el.getAttribute('name') === 'fio') {
-            el.value = el.value.replace(/[^а-яА-Яa-zA-z]/g, '');
+        const regExpName = /^[а-яА-ЯёЁa-zA-Z]{2,}$/g;
+        const regExpPhone = /^\+\d{7,16}/g;
+
+        let isFilled = false;
+        let isNameValid = false;
+        let isPhoneValid = false;
+
+        const sendData = (data) => {
+            return fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+
+            }).then(res => res.json());
         };
 
-        if (el.getAttribute('name') === 'phone') {
-            el.value = el.value.replace(/[^0-9\+]/g, '');
-        };
-    };
 
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-    for (let el of form.elements) {
-        if (el.tagName === 'INPUT') {
-            el.addEventListener('input', () => {
-                validateElem(el);
+            const formData = new FormData(form);
+            const formBody = {};
+            let inputsVal = [];
+
+            formData.forEach((val, key) => {
+                formBody[key] = val;
             });
-        };
-    };
 
+            formBody.countVal = totalVal;
 
-    const sendData = (data) => {
-        return fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
+            formInputs.forEach(el => {
+
+                if (el.getAttribute('type') !== 'hidden') {
+                    if (el.value) {
+                        inputsVal.push(el.value);
+                    };
+                };
+
+                if (el.name === 'fio') {
+                    if (regExpName.test(el.value)) {
+                        isNameValid = true;
+                    };
+                };
+
+                if (el.name === 'phone') {
+                    if (regExpPhone.test(el.value)) {
+                        isPhoneValid = true;
+                    };
+                };
+
+            });
+
+            if (inputsVal.length === 2) {
+                isFilled = true;
             }
 
-        }).then(res => res.json());
+            if (isFilled && isNameValid && isPhoneValid) {
+                sendData(formBody).then();
+                form.reset();
+
+                alert('Данные отправлены');
+            } else {
+                alert('Проверьте правильность заполнения полей')
+            };
+        });
     };
 
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-        const formBody = {};
-
-        formData.forEach((val, key) => {
-            formBody[key] = val;
-        });
-
-
-        if (checkingInputValue()) {
-            sendData(formBody).then();
-        }
-    });
-
+    sendFormFunc('form1');
+    sendFormFunc('form2');
+    sendFormFunc('order-call');
+    sendFormFunc('application-form');
 };
 
-export { sendFormModule };
+export default sendFormModule;

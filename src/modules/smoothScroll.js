@@ -1,10 +1,10 @@
-const smoothScrollModule = (btn, section, block) => {
-    const scrollToBtn = document.querySelector(btn);
-    const scrollToSection = document.querySelector(section);
-    const hideAfterBlock = document.querySelector(block)
+const smoothScrollModule = () => {
+    const scrollToBtn = document.querySelector('.smooth-scroll');
+    const scrollToSection = document.querySelector('#header');
+    const hideAfterBlock = document.querySelector('#offer');
 
-    scrollToBtn.style.opacity = '0';
-    scrollToBtn.style.transition = '0.3s ease-in';
+    scrollToBtn.style.cursor = 'pointer';
+    scrollToBtn.style.display = 'none';
 
     const scrollTo = (el) => {
         window.scroll({
@@ -19,16 +19,15 @@ const smoothScrollModule = (btn, section, block) => {
         let hideAfterBlockHeight = hideAfterBlock.offsetHeight;
 
         if (scrollVal >= hideAfterBlockHeight) {
-            scrollToBtn.style.opacity = '1';
+            scrollToBtn.style.display = 'block';
         } else {
-            scrollToBtn.style.opacity = '0';
+            scrollToBtn.style.display = 'none';
         }
     });
 
     scrollToBtn.addEventListener('click', () => {
         scrollTo(scrollToSection);
     });
-
 };
 
-export { smoothScrollModule };
+export default smoothScrollModule;

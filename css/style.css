@@ -1546,6 +1546,24 @@ input.error {
   display: none;
 }
 
+/* добавления */
+/* .image-modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
+.image-modal img{
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+} */
+
+/* добавления */
+
 .services-modal--opened {
   position: fixed;
   top: 50%;

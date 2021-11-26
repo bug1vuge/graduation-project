@@ -1,35 +1,39 @@
-const modalModule = (modalData) => {
-    const modal = document.querySelector(modalData.modal);
-    const overlay = document.querySelector(modalData.overlay);
-    const openModalBtns = document.querySelectorAll(modalData.openBtn);
-    const closeModalBtns = document.querySelectorAll(modalData.closeBtn);
+const modalModule = () => {
+    const overlay = document.querySelector('.overlay');
 
-    const openModalFunc = (e) => {
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            e.preventDefault();
-        }
+    const toggleModal = (modalSelector, openButtonSelector, closeButtonSelector) => {
 
-        overlay.style.display = 'block';
-        modal.style.display = 'block';
+        const modal = document.querySelector(modalSelector);
+        const openModalButtons = document.querySelectorAll(openButtonSelector);
+        const closeModalButtons = document.querySelectorAll(closeButtonSelector);
+
+
+        openModalButtons.forEach(el => {
+            el.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+                    e.preventDefault();
+                };
+
+                overlay.style.display = 'block';
+                modal.style.display = 'block';
+            });
+        });
+
+        closeModalButtons.forEach(el => {
+            el.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+                    e.preventDefault();
+                };
+
+                overlay.style.display = 'none';
+                modal.style.display = 'none';
+            });
+        });
     };
 
-    const closeModalFunc = (e) => {
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            e.preventDefault();
-        }
 
-        overlay.style.display = 'none';
-        modal.style.display = 'none';
-    };
-
-
-    openModalBtns.forEach(btn => {
-        btn.addEventListener('click', openModalFunc);
-    });
-
-    closeModalBtns.forEach(btn => {
-        btn.addEventListener('click', closeModalFunc);
-    });
+    toggleModal('.header-modal', '.order-call-btn', '.header-modal__close');
+    toggleModal('.services-modal', '.call-measurer-btn', '.services-modal__close');
 };
 
-export { modalModule };
+export default modalModule;

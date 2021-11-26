@@ -89,4 +89,4 @@ const servicesSliderModule = () => {
     });
 };
 
-export { servicesSliderModule };
+export default servicesSliderModule;

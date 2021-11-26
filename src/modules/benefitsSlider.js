@@ -92,4 +92,4 @@ const benefitsSliderModule = () => {
 
 };
 
-export { benefitsSliderModule };
+export default benefitsSliderModule;

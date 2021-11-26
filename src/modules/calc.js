@@ -24,6 +24,7 @@ const calcModule = (price = 100) => {
 
         totalInput.value = totalVal;
 
+        localStorage.setItem('totalValue', totalInput.value);
 
         if (typeSelectVal === 0) {
             materialSelect.value = '';
@@ -40,4 +41,4 @@ const calcModule = (price = 100) => {
     });
 };
 
-export { calcModule };
+export default calcModule;

@@ -94,8 +94,8 @@
               </div>
             </div>
             <div class="col-sm-12 col-lg-6">
-              <div class="button kuhni-button">
-                <a href="#callback" class="btn btn-warning btn-block fancyboxModal">
+              <div class="button">
+                <a href="#callback" class="btn btn-warning btn-block fancyboxModal order-call-btn">
                   <i class="phone-icon"></i> Заказать
                   звонок!
                 </a>
@@ -266,8 +266,8 @@
                   class="fancybox-thumb"><span>Смотреть работы</span></a>
               </p>
               <div class="service-button">
-                <a id="call-measurer" href="#application" data-subject="Стандартные кухни"
-                  class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a>
+                <a href="#application" data-subject="Стандартные кухни"
+                  class="btn btn-success btn-sm fancyboxModal call-measurer-btn">Вызвать замерщика</a>
               </div>
             </div>
           </div>
@@ -319,8 +319,8 @@
                   class="fancybox-thumb"><span>Смотреть работы</span></a>
               </p>
               <div class="service-button">
-                <a id="call-measurer" href="#application" data-subject="Стандартные шкафы-купе"
-                  class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a>
+                <a href="#application" data-subject="Стандартные шкафы-купе"
+                  class="btn btn-success btn-sm fancyboxModal call-measurer-btn">Вызвать замерщика</a>
               </div>
             </div>
           </div>
@@ -350,8 +350,8 @@
                   class="fancybox-thumb"><span>Смотреть работы</span></a>
               </p>
               <div class="service-button">
-                <a id="call-measurer" href="#application" data-subject="Элитные кухни"
-                  class="btn btn-success btn-sm fancyboxModal">Вызвать
+                <a href="#application" data-subject="Элитные кухни"
+                  class="btn btn-success btn-sm fancyboxModal call-measurer-btn">Вызвать
                   замерщика</a>
               </div>
             </div>
@@ -378,8 +378,8 @@
                   class="fancybox-thumb"><span>Смотреть работы</span></a>
               </p>
               <div class="service-button">
-                <a id="call-measurer" href="#application" data-subject="Элитные шкафы-купе"
-                  class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a>
+                <a href="#application" data-subject="Элитные шкафы-купе"
+                  class="btn btn-success btn-sm fancyboxModal call-measurer-btn">Вызвать замерщика</a>
               </div>
             </div>
           </div>
@@ -409,10 +409,10 @@
             <div class="countdown" data-days="7">
               <div class="countdown-text">До конца акции осталось:
                 <div class="count-wrap">
-                  <div class="count count_1 count1-timer1-block">Дней:</br> <span>01</span></div>
-                  <div class="count count_2 count2-timer1-block">Часов:</br> <span>02</span></div>
-                  <div class="count count_3 count3-timer1-block">Минут:</br> <span>03</span></div>
-                  <div class="count count_4 count4-timer1-block">Секунд:</br> <span>04</span></div>
+                  <div class="count count_1 count1-timer1-el">Дней:</br> <span>01</span></div>
+                  <div class="count count_2 count2-timer1-el">Часов:</br> <span>02</span></div>
+                  <div class="count count_3 count3-timer1-el">Минут:</br> <span>03</span></div>
+                  <div class="count count_4 count4-timer1-el">Секунд:</br> <span>04</span></div>
                 </div>
               </div>
             </div>
@@ -657,10 +657,10 @@
             <div class="countdown" data-days="7">
               <div class="countdown-text">До конца акции осталось:
                 <div class="count-wrap">
-                  <div class="count count_1 count1-timer2-block">Дней:</br> <span>00</span></div>
-                  <div class="count count_2 count2-timer2-block">Часов:</br> <span>00</span></div>
-                  <div class="count count_3 count3-timer2-block">Минут:</br> <span>00</span></div>
-                  <div class="count count_4 count4-timer2-block">Секунд:</br> <span>00</span></div>
+                  <div class="count count_1 count1-timer2-el">Дней:</br> <span>00</span></div>
+                  <div class="count count_2 count2-timer2-el">Часов:</br> <span>00</span></div>
+                  <div class="count count_3 count3-timer2-el">Минут:</br> <span>00</span></div>
+                  <div class="count count_4 count4-timer2-el">Секунд:</br> <span>00</span></div>
                 </div>
               </div>
             </div>
@@ -921,7 +921,7 @@
             <div class="box-modal_body rf">
               <p class="text-center">Оставьте, пожалуйста, заявку. Мы позвоним Вам в ближайшее время и ответим на все
                 вопросы!</p>
-              <form name="callback-form">
+              <form id="order-call" name="callback-form">
                 <div class="form-group">
                   <input type="text" name="fio" class="form-control required" placeholder="Ваше имя*">
                 </div>
@@ -954,7 +954,7 @@
             </div>
             <div class="box-modal_body rf">
               <p class="text-center">Оставьте заявку и специалист свяжется с Вами в ближайшее время!</p>
-              <form name="application-form">
+              <form id="application-form" name="application-form">
                 <div class="form-group">
                   <input type="text" name="fio" class="form-control required" placeholder="Ваше имя*">
                 </div>
