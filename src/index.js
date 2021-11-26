@@ -7,19 +7,16 @@ import showDocs from './modules/showDocs';
 import smoothScroll from './modules/smoothScroll';
 import calc from './modules/calc';
 
-window.addEventListener('DOMContentLoaded', () => {
-    modalModule();
-    benefitsSlider();
-    servicesSlider();
-    timer();
-    sendForm();
-    showDocs();
-    smoothScroll();
+modalModule();
+benefitsSlider();
+servicesSlider();
+timer();
+sendForm();
+showDocs();
+smoothScroll();
 
-    try {
-        calc();
-    } catch (error) { }
-});
-
+try {
+    calc();
+} catch (error) { }
 
 
