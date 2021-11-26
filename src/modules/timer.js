@@ -44,15 +44,18 @@ const timerModule = () => {
             timerMinutes.textContent = addZero(timerData.minutes);
             timerSeconds.textContent = addZero(timerData.seconds);
 
-            if (timerData.timeRemaining < 0) {
-                clearInterval(isTimerUpdate);
+            if (timerData.timeRemaining <= 0) {
 
-
+                timerDays.textContent = '00';
                 timerHours.textContent = '00';
                 timerMinutes.textContent = '00';
                 timerSeconds.textContent = '00';
+
+                clearInterval(isTimerUpdate);
             }
         };
+
+        updateTimer();
 
         isTimerUpdate = setInterval(updateTimer, 1000);
     };

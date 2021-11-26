@@ -3,9 +3,6 @@ const smoothScrollModule = () => {
     const scrollToSection = document.querySelector('#header');
     const hideAfterBlock = document.querySelector('#offer');
 
-    scrollToBtn.style.cursor = 'pointer';
-    scrollToBtn.style.display = 'none';
-
     const scrollTo = (el) => {
         window.scroll({
             left: 0,
