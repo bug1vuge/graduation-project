@@ -1547,20 +1547,76 @@ input.error {
 }
 
 /* добавления */
-/* .image-modal{
-  display: none;
+.docs-modal__overlay {
   position: fixed;
-  top: 0;
   left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.docs-modal__overlay--vis{
+  opacity: 1;
+  visibility: visible;
+}
+.docs-modal {
+  display: none;
+  background: #fff;
+  width: 500px;
+  height: 700px;
+
+  position: relative;
+}
+.docs-modal:hover .hide-docs-modal{
+  opacity: 1;
+  visibility: visible;
+}
+
+.docs-modal--vis{
+  display: block;
+}
+
+.hide-docs-modal{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  border: none;
+  padding: 0;
+  background: #fff;
+
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+
+  line-height: 0;
+  font-size: 24px;
+  cursor: pointer;
+  color: #000;
+
+  opacity: 0;
+  transition: all 0.4s ease;
+  visibility: hidden;
+}
+
+.modal-image {
   width: 100%;
   height: 100%;
-  z-index: 9;
+  object-fit: fill;
 }
-.image-modal img{
-  width: 80%;
-  height: 80%;
-  object-fit: contain;
-} */
 
 /* добавления */
 
@@ -1708,5 +1764,16 @@ input.error {
   .benefits-wrap {
     width: 100%;
     max-width: 576px;
+  }
+}
+
+@media(max-width: 768px) {
+  .docs-modal{
+    width: 300px;
+    height: 500px;
+  }
+  .hide-docs-modal{
+    opacity: 1;
+    visibility: visible;
   }
 }

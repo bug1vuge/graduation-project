@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
     servicesSlider();
     timer();
     sendForm();
-    // showDocs();
+    showDocs();
     smoothScroll();
 
     try {

@@ -1,29 +1,28 @@
 const showDocsModule = () => {
-    const docsBlock = document.querySelector('.text-center');
-    // const docsItems = document.querySelectorAll('.sertificate-document');
-    const overlay = document.querySelector('.overlay');
-    const imgModal = document.createElement('div');
-    const bigImg = document.createElement('img');
+    const docsWrap = document.querySelector('.text-center');
+    const docsOverlay = document.querySelector('.docs-modal__overlay');
+    const docsModal = document.querySelector('.docs-modal');
+    const modalImage = document.querySelector('.modal-image');
 
-    imgModal.classList.add('image-modal');
-
-    docsBlock.append(imgModal);
-    imgModal.append(bigImg);
-
-    imgModal.style.justifyContent = 'center';
-    imgModal.style.alignItems = 'center';
-
-    docsBlock.addEventListener('click', (e) => {
+    docsWrap.addEventListener('click', (e) => {
         e.preventDefault();
 
-        if (e.target.closest('.sertificate-document')) {
+        let currEl = e.target;
 
-            imgModal.style.display = 'flex';
-            overlay.style.display = 'block';
+        if (currEl.closest('.sertificate-document')) {
 
-            const path = e.target.parentNode.getAttribute('href');
-            bigImg.setAttribute('src', path);
-        }
+            docsModal.classList.add('docs-modal--vis');
+            docsOverlay.classList.add('docs-modal__overlay--vis');
+
+            const path = currEl.parentNode.getAttribute('href');
+
+            modalImage.setAttribute('src', path);
+        };
+
+        if (currEl.classList.contains('hide-docs-modal') || currEl.classList.contains('docs-modal__overlay')) {
+            docsModal.classList.remove('docs-modal--vis');
+            docsOverlay.classList.remove('docs-modal__overlay--vis');
+        };
     });
 };
 
