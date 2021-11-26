@@ -69,6 +69,11 @@ const sendFormModule = () => {
                 form.reset();
 
                 alert('Данные отправлены');
+
+                isFilled = false;
+                isNameValid = false;
+                isPhoneValid = false;
+
             } else {
                 alert('Проверьте правильность заполнения полей')
             };
