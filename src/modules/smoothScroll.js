@@ -1,7 +1,7 @@
 const smoothScrollModule = () => {
     const scrollToBtn = document.querySelector('.smooth-scroll');
     const scrollToSection = document.querySelector('#header');
-    const hideAfterBlock = document.querySelector('#offer');
+    const hideAfterBlock = document.querySelector('#benefits');
 
     const scrollTo = (el) => {
         window.scroll({
@@ -11,15 +11,21 @@ const smoothScrollModule = () => {
         });
     };
 
-    window.addEventListener('scroll', () => {
-        let scrollVal = Math.ceil(window.scrollY);
-        let hideAfterBlockHeight = hideAfterBlock.offsetHeight;
+    const checkingPassedPos = () => {
+        let scrollVal = window.scrollY;
+        let passedHeight = hideAfterBlock.offsetTop;
 
-        if (scrollVal >= hideAfterBlockHeight) {
-            scrollToBtn.style.display = 'block';
+        if (scrollVal > passedHeight) {
+            scrollToBtn.classList.add('show');
         } else {
-            scrollToBtn.style.display = 'none';
+            scrollToBtn.classList.remove('show');
         }
+    };
+
+    checkingPassedPos();
+
+    window.addEventListener('scroll', () => {
+        checkingPassedPos();
     });
 
     scrollToBtn.addEventListener('click', () => {
